@@ -7,50 +7,75 @@
     <title>Document</title>
 
     <style>
-        main div {
-            /* Descendant combinator */
-        }
+      main div {
+        /* Descendant combinator */
+      }
 
-        main > div {
-            /* This will only select divs that are a child of main */
-        }
+      main > div {
+        /* This will only select divs that are a child of main */
+      }
 
-        main >div > div {
-            /* This will only select divs that are a grandchildren of main */
-        }
+      main > div > div {
+        /* This will only select divs that are a grandchildren of main */
+      }
 
-        .group1 + div {
-            /* This rule will select adjacent or siblings of group1 with class of 'child group 2' */
-        }
+      .group1 + div {
+        /* This rule will select adjacent or siblings of group1 with class of 'child group 2' */
+      }
 
-        .group1 + div + div {
-            /* This rule will select adjacent or siblings of group1 with class of 'child group 3' */
-        }
+      .group1 + div + div {
+        /* This rule will select adjacent or siblings of group1 with class of 'child group 3' */
+      }
 
-        .group1 ~ div {
-            /* This rule will select all of .group1's siblings */
-        }
+      .group1 ~ div {
+        /* This rule will select all of .group1's siblings */
+      }
 
-        a {
-          text-decoration:none;
-        }
+      a {
+        text-decoration: none;
+      }
 
-        a:link{
-          color:red;
-        }
+      a:link {
+        color: red;
+      }
 
-        a:visited {
-          color:green;
-        }
+      a:visited {
+        color: green;
+      }
 
-        /* :nth-of-type(1) is a powerful selector */
+      p:hover {
+        color: rebeccapurple;
+      }
+      /* :nth-of-type(1) is a powerful selector */
+
+      /* li:first-child {
+        background-color: aqua;
+      }
+
+      li:last-child {
+        background-color: brown;
+      }
+
+      div:only-child {
+        background-color: tomato;
+      } */
+
+      li:nth-child(6n-4) {
+        background-color: black;
+      }
+
+      li:nth-child(-3n+12) {
+        background-color: red;
+      }
     </style>
   </head>
 
   <body>
     <main class="parent">
       <div class="child group1">
-        <div class="grand-child group1"><a href="https://www.google.com">a link</a></div>
+        <div class="grand-child group1">
+          <a href="https://www.google.com">a link</a>
+        </div>
       </div>
       <div class="child group2">
         <div class="grand-child group2"></div>
@@ -58,6 +83,36 @@
       <div class="child group3">
         <div class="grand-child group3"></div>
       </div>
+
+      <div>
+        <p>Hello</p>
+      </div>
+
+      <ul>
+        <li>First</li>
+        <li><div>Only Child</div></li>
+        <li>
+          <div>Not</div>
+          <div>The</div>
+          <div>Only Child</div>
+        </li>
+        <li>Last</li>
+      </ul>
+
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
     </main>
   </body>
 </html>
