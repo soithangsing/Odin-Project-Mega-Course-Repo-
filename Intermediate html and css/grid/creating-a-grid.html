@@ -6,24 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
-            display: grid;
-            grid-template: 50px 50px /  50px 50px;
-            column-gap: 10px;
+
+
+        .super-container{
+            height: 90vh;
+            width: 90vw;
+            display: flex;
+            justify-content: center;
         }
 
-        .container > div {
-            border: 1px solid salmon;
+        .container {
+            width: 750px;
+            display: grid;
+            grid-template: 80px 1fr / [start]1fr[middle] 2fr[end];
+            grid-template-areas: "top top" "side main";
         }
+
+       .header {
+           background-color: aqua;
+           /* grid-column: start/end; */
+           grid-area: top;
+       }
+
+       .sidebar {
+           background-color: tomato;
+       }
+
+       .content {
+           background-color: greenyellow;
+       }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 5</div>
+    <div class="super-container">
+        <div class="container">
+            <div class="header">Header</div>
+            <div class="sidebar">Sidebar</div>
+            <div class="content">Main content</div>
+        </div>
     </div>
+   
 </body>
 </html>
